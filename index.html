@@ -6,8 +6,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Solware es una empresa de desarrollo de automatizaciones que ofrece soluciones a las necesidades de nuestros clientes">
+    <meta name="author" content="Solware">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
@@ -51,7 +51,7 @@
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
             <a href="index.html" class="logo">
-              <img src="assets/images/logo.png" alt="Chain App Dev">
+              <img src="assets/images/logo.png" alt="Logo de Chain App Dev">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
@@ -631,7 +631,7 @@
           </div>
         </div>
         <div class="col-lg-6 offset-lg-3">
-          <form id="search" action="#" method="GET">
+          <form id="search" action="#" method="GET" onsubmit="return validateForm()">
             <div class="row">
               <div class="col-lg-6 col-sm-6">
                 <fieldset>
@@ -718,5 +718,17 @@
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
+
+  <script>
+    function validateForm() {
+      const email = document.querySelector('input[name="address"]').value;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert("Por favor, introduce una dirección de correo electrónico válida.");
+        return false;
+      }
+      return true;
+    }
+  </script>
 </body>
 </html>
