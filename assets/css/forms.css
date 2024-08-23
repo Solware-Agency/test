@@ -1,0 +1,118 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    background: transparent; /* Fondo transparente */
+}
+
+.form-section {
+    padding: 20px 20px; /* Reducir padding arriba y abajo */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    background: transparent; /* Fondo transparente */
+    color: #fff;
+}
+
+.form-section h4 {
+    font-size: 36px; /* Tamaño más grande */
+    font-weight: bold; /* Destacado */
+    line-height: 45px;
+    color: #fff;
+    margin-left: 13%;
+    margin-right: 13%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group label {
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    flex: 1;
+    text-align: left;
+    margin-right: 10px; /* Mayor separación */
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    border: none;
+    border-bottom: 2px solid #fff;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    background: transparent; /* Fondo transparente */
+    flex: 2;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #fff;
+}
+
+.form-group select {
+    background: transparent; /* Fondo transparente para los select */
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-column {
+    flex: 0 0 48%; /* Dos columnas con espacio entre ellas */
+}
+
+.gradient-button {
+    display: inline-block !important;
+    padding: 10px 20px !important;
+    color: #fff !important; /* Color del texto del botón */
+    text-transform: capitalize;
+    font-size: 15px;
+    background: #fff; /* Fondo blanco */
+    border-radius: 23px;
+    font-weight: 500 !important;
+    letter-spacing: 0.3px !important;
+    transition: all .5s;
+    width: 100%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px; /* Separación del botón */
+}
+
+.gradient-button:hover {
+    color: #fff !important;
+    background: linear-gradient(105deg, rgba(91,104,235,1) 0%, rgba(40,225,253,1) 100%);
+}
+
+#thankYouMessage {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: transparent; /* Fondo transparente */
+}
+
+#thankYouMessage h3 {
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+}
