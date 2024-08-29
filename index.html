@@ -346,8 +346,41 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
                   <fieldset>
-                    <input name="telefono" type="tel" class="form-control" id="phone" placeholder="Número de Teléfono"
-                      pattern="[0-9\s\+\-]*" required>
+                    <div class="input-group">
+                      <select name="codigo_pais" class="form-control" id="country-code" required>
+                        <option value="+58">+58 (Venezuela)</option>
+                        <option value="+34">+34 (España)</option>
+                        <option value="+1">+1 (Estados Unidos)</option>
+                        <option value="+52">+52 (México)</option>
+                        <option value="+57">+57 (Colombia)</option>
+                        <option value="+44">+44 (Reino Unido)</option>
+                        <option value="+33">+33 (Francia)</option>
+                        <option value="+49">+49 (Alemania)</option>
+                        <option value="+55">+55 (Brasil)</option>
+                        <option value="+61">+61 (Australia)</option>
+                        <option value="+54">+54 (Argentina)</option>
+                        <option value="+51">+51 (Perú)</option>
+                        <option value="+56">+56 (Chile)</option>
+                        <option value="+598">+598 (Uruguay)</option>
+                        <option value="+1">+1 (Canadá)</option>
+                        <option value="+61">+61 (Nueva Zelanda)</option>
+                        <option value="+81">+81 (Japón)</option>
+                        <option value="+86">+86 (China)</option>
+                        <option value="+91">+91 (India)</option>
+                        <option value="+82">+82 (Corea del Sur)</option>
+                        <option value="+66">+66 (Tailandia)</option>
+                        <option value="+63">+63 (Filipinas)</option>
+                        <option value="+20">+20 (Egipto)</option>
+                        <option value="+27">+27 (Sudáfrica)</option>
+                        <option value="+254">+254 (Kenia)</option>
+                        <option value="+225">+225 (Costa de Marfil)</option>
+                        <option value="+61">+61 (Fiyi)</option>
+                        <option value="+64">+64 (Nueva Zelanda)</option>
+                        <!-- Agregar más códigos de país según sea necesario -->
+                      </select>
+                      <input name="telefono" type="tel" class="form-control" id="phone" placeholder="Número de Teléfono"
+                        pattern="[0-9\s\+\-]*" required>
+                    </div>
                   </fieldset>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
