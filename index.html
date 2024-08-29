@@ -17,7 +17,7 @@
 
   <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
 
-  <link rel="stylesheet" href="assets/css/templatemo-softy-pinko.css">
+  <link rel="stylesheet" href="assets/css/estilosolware.css">
 
 </head>
 
@@ -346,7 +346,8 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
                   <fieldset>
-                    <input name="telefono" type="tel" class="form-control" id="phone" placeholder="Número de Teléfono">
+                    <input name="telefono" type="tel" class="form-control" id="phone" placeholder="Número de Teléfono"
+                      pattern="[0-9\s\+\-]*" required>
                   </fieldset>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
@@ -357,7 +358,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
                   <fieldset>
-                    <select id="sector" name="sector_trabajo" class="form-control">
+                    <select id="sector" name="sector_trabajo" class="form-control" required>
                       <option value="" disabled selected hidden>Sector</option>
                       <option value="Tecnología y Software">Tecnología y Software</option>
                       <option value="Comercio Electrónico">Comercio Electrónico</option>
@@ -372,7 +373,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
                   <fieldset>
-                    <select id="areasInteres" name="areas_interes" class="form-control">
+                    <select id="areasInteres" name="areas_interes" class="form-control" required>
                       <option value="" disabled selected hidden>Área de interés</option>
                       <option value="Análisis y Marketing Digital">Análisis y Marketing Digital
                       </option>
@@ -397,7 +398,7 @@
                 </div>
               </div>
             </form>
-            <div id="success-message" style="display:none;">
+            <div id="success-message" class="form-control" style="display:none;">
               <p>Su mensaje ha sido enviado con éxito, Solware te estará contactando en los próximos minutos.</p>
             </div>
           </div>
@@ -413,11 +414,11 @@
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
           <ul class="social" style="display: flex; justify-content: center;">
-            <li><a href="https://www.instagram.com/solware_/?hl=es" target="_blank"><i class="fa fa-instagram"></i></a>
+            <li><a href="https://www.instagram.com/solware_/?hl=es" target="_blank"><i class="fa fa-instagram large-icon"></i></a>
             </li>
-            <li><a href="https://wa.me/584120564628" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
-            <li><a href="mailto:solwareve@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
-            <li><a href="tel:+584120564628" target="_blank"><i class="fa fa-phone"></i></a></li>
+            <li><a href="https://wa.me/584120564628" target="_blank"><i class="fa fa-whatsapp large-icon"></i></a></li>
+            <li><a href="mailto:solwareve@gmail.com" target="_blank"><i class="fa fa-envelope large-icon"></i></a></li>
+            <li><a href="tel:+584120564628" target="_blank"><i class="fa fa-phone large-icon"></i></a></li>
           </ul>
         </div>
       </div>
