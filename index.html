@@ -298,37 +298,29 @@
           </div>
         </div>
         <!-- ***** Contact Text End ***** -->
-        <!-- ***** Contact Text End ***** -->
+        <!-- ***** Contact Form Start ***** -->
         <div class="col-lg-8 col-md-6 col-sm-12">
           <div class="contact-form">
-            <form id="contact"
-              action="https://script.google.com/macros/s/AKfycbw2qkY3k-LBTKrSiAXthtou58ObWzWVxODUIH1ZBYLIonSzkvZ1wdxl7tTjetp22hZi/exec"
-              method="POST">
+            <form id="contact" action="https://script.google.com/macros/s/AKfycbw2qkY3k-LBTKrSiAXthtou58ObWzWVxODUIH1ZBYLIonSzkvZ1wdxl7tTjetp22hZi/exec" method="POST">
               <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12">
                   <fieldset>
-                    <input name="nombre" type="text" class="form-control" id="name" placeholder="Nombre Completo"
-                      required aria-required="true">
+                    <input name="nombre" type="text" class="form-control" id="name" placeholder="Nombre Completo" required aria-required="true">
                   </fieldset>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
                   <fieldset>
-                    <input name="nombre_empresa" type="text" class="form-control" id="company"
-                      placeholder="Nombre de la Empresa">
+                    <input name="nombre_empresa" type="text" class="form-control" id="company" placeholder="Nombre de la Empresa">
                   </fieldset>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
                   <fieldset>
-                    <input name="telefono" type="tel" class="form-control" id="phone" placeholder="Número de Teléfono"
-                      required>
+                    <input name="telefono" type="tel" class="form-control" id="phone" placeholder="Número de Teléfono" required>
                   </fieldset>
-                  <!-- Campo oculto para almacenar el número de teléfono completo -->
-                  <input type="hidden" id="full-phone" name="full_phone_number">
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
                   <fieldset>
-                    <input name="email" type="email" class="form-control" id="email"
-                      placeholder="Dirección de Correo Electrónico" required aria-required="true">
+                    <input name="email" type="email" class="form-control" id="email" placeholder="Dirección de Correo Electrónico" required aria-required="true">
                   </fieldset>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
@@ -359,8 +351,7 @@
                 </div>
                 <div class="col-lg-12">
                   <fieldset>
-                    <textarea name="comentarios" rows="6" class="form-control" id="message" placeholder="Tu Mensaje"
-                      required></textarea>
+                    <textarea name="comentarios" rows="6" class="form-control" id="message" placeholder="Tu Mensaje" required></textarea>
                   </fieldset>
                 </div>
                 <div class="col-lg-12">
@@ -376,6 +367,10 @@
           </div>
         </div>
         <!-- ***** Contact Us End ***** -->
+      </div>
+    </div>
+  </section>
+  <!-- ***** Contact Us End ***** -->
 
   <!-- ***** Footer Start ***** -->
   <footer>
@@ -443,35 +438,16 @@
     });
 
     const input = document.querySelector("#phone");
-  const fullPhoneInput = document.querySelector("#full-phone");
-
-  const iti = window.intlTelInput(input, {
-    initialCountry: "auto",
-    geoIpLookup: function(callback) {
-      fetch('https://ipinfo.io/json')
-        .then(response => response.json())
-        .then(data => callback(data.country))
-        .catch(() => callback('us'));
-    },
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    autoPlaceholder: "aggressive",  // Muestra el placeholder con el formato del país
-    nationalMode: false,             // Permite ingresar siempre el código de país
-    separateDialCode: true,          // Muestra el código de país separado
-    allowDropdown: true,             // Permite el dropdown para seleccionar el país
-    placeholderNumberType: "MOBILE", // Tipo de número para el placeholder
-    preferredCountries: ["ve", "us"], // Establece los países preferidos al principio del dropdown
-    onlyCountries: ["ve", "us", "co"], // Lista de países permitidos
-  });
-
-  // Validar el número antes de enviar
-  document.querySelector('#contact').addEventListener('submit', function(e) {
-    if (!iti.isValidNumber()) {
-      e.preventDefault();
-      alert('Por favor, ingresa un número de teléfono válido.');
-    } else {
-      fullPhoneInput.value = iti.getNumber();
-    }
-  });
+    const iti = window.intlTelInput(input, {
+      initialCountry: "auto",
+      geoIpLookup: function(callback) {
+        fetch('https://ipinfo.io/json')
+          .then(response => response.json())
+          .then(data => callback(data.country))
+          .catch(() => callback('us'));
+      },
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+    });
   </script>
 </body>
 
