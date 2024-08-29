@@ -404,8 +404,37 @@
           </div>
         </div>
       </div>
+      <script>
+        document.getElementById('contact').addEventListener('submit', function (event) {
+          event.preventDefault(); // Evita la recarga de la página
+          const submitButton = document.getElementById('form-submit');
+          submitButton.disabled = true; // Bloquea el botón de envío
 
-  </section>
+          // Recopila los datos del formulario
+          const formData = new FormData(this);
+
+          // Envía los datos usando fetch
+          fetch(this.action, {
+            method: 'POST',
+            body: formData
+          }).then(response => {
+            if (response.ok) {
+              // Oculta el formulario
+              document.getElementById('contact').style.display = 'none';
+
+              // Muestra el mensaje de éxito
+              document.getElementById('success-message').style.display = 'block';
+            } else {
+              submitButton.disabled = false; // Desbloquea el botón si hay un error
+              alert('Hubo un problema al enviar el formulario. Por favor, inténtalo de nuevo.');
+            }
+          }).catch(error => {
+            console.error('Error:', error);
+            submitButton.disabled = false; // Desbloquea el botón en caso de error
+            alert('Hubo un problema al enviar el formulario. Por favor, inténtalo de nuevo.');
+          });
+        });
+      </script>
   <!-- ***** Contact Us End ***** -->
 
   <!-- ***** Footer Start ***** -->
