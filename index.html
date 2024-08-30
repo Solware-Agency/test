@@ -423,16 +423,30 @@
   <script src="assets/js/custom.js"></script>
 
   <script>
+    // Inicializa intlTelInput
+    const input = document.querySelector("#phone");
+    const iti = window.intlTelInput(input, {
+      // Opciones de configuración
+      initialCountry: "auto",
+      geoIpLookup: function(callback) {
+        fetch('https://ipinfo.io?token=9f9f37cac01802')
+          .then(response => response.json())
+          .then(data => callback(data.country))
+          .catch(() => callback('us'));
+      },
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+    });
+  
     document.getElementById('contact').addEventListener('submit', function (event) {
       event.preventDefault(); // Evita la recarga de la página
       const submitButton = document.getElementById('form-submit');
       submitButton.disabled = true; // Bloquea el botón de envío
-
+  
       // Recopila los datos del formulario
       const formData = new FormData(this);
       const countryData = iti.getSelectedCountryData(); // Obtiene el código del país seleccionado
       formData.append('codigo_pais', countryData.dialCode); // Agrega el código del país al formulario
-
+  
       // Envía los datos usando fetch
       fetch(this.action, {
         method: 'POST',
@@ -441,7 +455,7 @@
         if (response.ok) {
           // Oculta el formulario
           document.getElementById('contact').style.display = 'none';
-
+  
           // Muestra el mensaje de éxito
           document.getElementById('success-message').style.display = 'block';
         } else {
@@ -454,7 +468,6 @@
         alert('Hubo un problema al enviar el formulario. Por favor, inténtalo de nuevo.');
       });
     });
-
   </script>
 </body>
 
