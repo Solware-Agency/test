@@ -458,26 +458,26 @@
     });
 
     const input = document.querySelector("#phone");
-  const fullPhoneInput = document.querySelector("#full-phone");
+    const fullPhoneInput = document.querySelector("#full-phone");
 
-  const iti = window.intlTelInput(input, {
-    initialCountry: "auto",
-    geoIpLookup: function(callback) {
-      fetch('https://ipinfo.io/json')
-        .then(response => response.json())
-        .then(data => callback(data.country))
-        .catch(() => callback('us'));
-    },
-    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    autoPlaceholder: "aggressive",
-    nationalMode: false,
-    separateDialCode: true,
-    allowDropdown: true,
-  });
+    const iti = window.intlTelInput(input, {
+      initialCountry: "auto",
+      geoIpLookup: function(callback) {
+        fetch('https://ipinfo.io/json')
+          .then(response => response.json())
+          .then(data => callback(data.country))
+          .catch(() => callback('us'));
+      },
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+      autoPlaceholder: "aggressive",
+      nationalMode: false,
+      separateDialCode: true,
+      allowDropdown: true,
+    });
 
-  document.querySelector('#contact').addEventListener('submit', function() {
-    fullPhoneInput.value = iti.getNumber();
-  });
+    document.querySelector('#contact').addEventListener('submit', function() {
+      fullPhoneInput.value = iti.getNumber();
+    });
   </script>
 </body>
 
